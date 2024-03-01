@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive zoo website</title>
+   
+    
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+    <header class="header">
+
+        <a href="#" class="logo"> <i class="fas fa-paw"></i> ZOO-ToPIA</a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#gallery">gallery</a>
+            <a href="#fauna">Fauna</a>
+            <a href="#flora">Flora</a>
+            <a href="#virtual-tour">Virtual Tour</a>
+            <a href="#data">Data</a>
+            <a href="#feedback">feedback</a>
+            <a href="#feedback">Contact</a>
+          
+            
+            
+        </nav>
+
+        <div class="icons">
+            <div id="login-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+     
+
+    <form action="" class="login-form">
+
+        <h3>login form</h3>
+        
+        <input type="email" placeholder="Enter your email" class="box">
+        <input type="password" placeholder="Enter your password" class="box">
+        <div class="remember">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me">remember me</label>
+        </div>
+        <a href="#" class="btn">login</a>
+
+    </form>
+
+    </header>
+
+
+
+    <!-- home -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <div class="blur">
+             <h3 >How do we judge that the 
+             animals are thriving?</h3>
+             </div>
+            <a href="login and signup/login.html" class="btn">Start the journey</a>
+           <a href="login and signup/SIGNUP.HTML"></a>
+
+        </div>
+
+        <img src="images/bottom_wave.png" alt="" class="wave">
+
+    </section>
+
+   
+
+    <!-- gallery -->
+
+    <section class="gallery" id="gallery">
+
+        <h2 class="heading">gallery</h2>
+
+        <div class="slideshow-container">
+
+            
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 8</div>
+                <img src="images/v.jpg" style="width:100%">
+                <div class="text"><b>Red Panda</b></div>
+              </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 8</div>
+              <img src="images/elephant.jpg" style="width:100%">
+              <div class="text"><b>Elephant</b></div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 8</div>
+              <img src="images/lion.jpg" style="width:100%">
+              <div class="text"><b>Lion</b></div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 8</div>
+              <img src="images/o.jpg" style="width:100%">
+              <div class="text"><b>Orangutans</b></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 8</div>
+                <img src="images/w.jpg" style="width:100%">
+                <div class="text"><b>whale</b></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 8</div>
+                <img src="images/willow.jpg" style="width:100%">
+                <div class="text"><b>Willo</b></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 8</div>
+                <img src="images/birch.jpg" style="width:100%">
+                <div class="text"><b>Birch</b></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">7 / 8</div>
+                <img src="images/banyan.jpg" style="width:100%">
+                <div class="text"><b>Banyan</b></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">8 / 8</div>
+                <img src="images/baobab.jpg" style="width:100%">
+                <div class="text"><b>Boabab</b></div>
+            </div>
+          
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+          </div>
+    </section>
+
+<script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+    <!-- animals -->
+
+    <section class="animal" id="fauna">
+
+        <h2 class="heading">Fauna</h2>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/a.jpg" alt="">
+                <div class="content">
+                    <h3>orangutan</h3>
+                    <a href="https://en.wikipedia.org/wiki/Orangutan" class="btn">see details</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/z1.jpg" alt="">
+                <div class="content">
+                    <h3>zebra</h3>
+                    <a href="https://en.wikipedia.org/wiki/Zebra" class="btn">see details</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/z2.jpg" alt="">
+                <div class="content">
+                    <h3>whale</h3>
+                    <a href="https://en.wikipedia.org/wiki/Whale" class="btn">see details</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/k.jpg" alt="">
+                <div class="content">
+                    <h3>dodo</h3>
+                    <a href="https://en.wikipedia.org/wiki/Dodo" class="btn">see details</a>
+                </div>
+            </div>
+
+        </div>
+
+       <!--Trees-->
+        <section class="tree" id="flora">
+
+            <h2 class="heading">Flora</h2>
+    
+            <div class="box-container">
+    
+                <div class="box">
+                    <img src="images/apple-tree.webp" alt="">
+                    <div class="content">
+                        <h3>Apple</h3>
+                        <a href="https://en.wikipedia.org/wiki/Apple" class="btn">see details</a>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <img src="images/oak (1).jpg" alt="">
+                    <div class="content">
+                        <h3>Oak</h3>
+                        <a href="https://en.wikipedia.org/wiki/Oak" class="btn">see details</a>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <img src="images/oak (2).jpg" alt="">
+                    <div class="content">
+                        <h3>Cedar</h3>
+                        <a href="https://en.wikipedia.org/wiki/Cedrus" class="btn">see details</a>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <img src="images/maple.png" alt="">
+                    <div class="content">
+                        <h3>Maple</h3>
+                        <a href="https://en.wikipedia.org/wiki/Maple" class="btn">see details</a>
+                    </div>
+                </div>
+    
+            </div>
+
+    </section>
+    <section class="virtual-zoo" id="virtual zoo">
+        <h2>Virtual Real-time Cams</h2>
+        <div class="box-container">
+            <div class="box">
+             <iframe width="575" height="325" src="https://www.youtube.com/embed/OIqUka8BOS8?si=zSBjuzigpBVD66q1&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+       <div class="box">
+        <iframe width="575" height="325" src="https://www.youtube.com/embed/bqj92vUiQvM?si=Oi9uO8MsBgWYOT2f&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        </div>
+    </section>
+
+
+    <section class="virtual-tour" id="virtual-tour">
+        <h2>virtual-tour</h2>
+        <div class="box-container">
+            <div class="box">
+              <iframe src="https://www.google.com/maps/embed?pb=!4v1709251233058!6m8!1m7!1scZzf_o2a0MAfT1rpG4D4GA!2m2!1d29.71471293576971!2d-95.39260061679443!3f299.5518016297872!4f-10.142745605576465!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            <div class="box">
+             <iframe src="https://www.google.com/maps/embed?pb=!4v1709251105583!6m8!1m7!1sn3nwsKaIse3RIv6lBivx0A!2m2!1d19.42250908570272!2d-99.18930524604268!3f340.81259644123344!4f-12.860893720047883!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+        </section>
+
+        <section class="data" id="data">
+            <h1>Vulnerable,Extinct and Endangered Species</h1>
+            <div class="box-container">
+                <div class="box">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RApH1jqUkIQ?si=eSDbt4KFsZKwY-JU&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                <div class="box">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QIMHkXDTqsI?si=ruHaWibMgXVKNsR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                </div>
+                  
+            </div>
+        </section>
+
+        
+        <section class="data" id="data">
+            <h1> Plants</h1>
+            <div class="box-container">
+                <div class="box">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/0v_dTYL88jo?si=6cGKaKTG1-M-EV_l&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                <div class="box">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BFJA9YRZGNM?si=yjzvjNyjvou_tRr9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+            </div>
+        </section>
+
+        <section class="data" id="data">
+            <h1>Cons of Artificial Habitat</h1>
+            <div class="box-container">
+                <div class="box">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u22kL2Xeleo?si=ysYGcn4Uz3szRURW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                <div class="box">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5tgNtIUOL4E?si=jTD04Cyq72PLltLZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+            </div>
+
+        </section>
+
+        <section class="about" id="about">
+            <h1>About Us</h1>
+            <p>Zootopia stands bold for freedom of animals.
+            Space for animals, both quantity and quality of space, is one of the most important unresolved issues for institutions maintaining wild animals in captivity. How much room does an animal in a zoo need to thrive? 
+            How do we judge that the animal is thriving? What constitutes an adequate living space anyway? All this, precisionary queries subjugate us and incultivate the thoughts to the direction of barriers of zoo. So, here is Zootopia the beauty of virtual reality which indulges giving the users a real-life experience with exclusivity.</p>
+        </section>
+         
+         
+
+   
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i> 7641301480</a>
+                <a href="#" class="links"><i class="fas fa-phone"></i> 1257367976</a>
+                <a href="#" class="links"><i class="fas fa-envelope"></i> info@ZOO_ToPIA.com</a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Jalandhar, India</a>
+            </div>
+
+           
+
+            <div class="box">
+                <h3>newsletter</h3>
+                <p>subscribe for latest updates</p>
+                <input type="email" placeholder="Your Email" class="email">
+                <a href="#" class="btn">subscribe</a>
+            </div>
+
+        </div>
+
+        <div class="credit">&copy; 2024 zoolife. All rights reserved by <a href="#" class="link">ZOO_ToPIA</a></div>
+
+    </section>
+
+
+
+</body>
+</html>
